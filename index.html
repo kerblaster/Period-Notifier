@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1 /DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CHS - Period Notifier</title> <!--Or Period Preacher? Hmmm...-->
+<meta name="author" content="Renard Tumbokon Class of 2013 Cranford High School" />
+<meta name="language" content="en" />
+<meta name="description" content="Cranford High School is a four-year public high school located in Cranford, New Jersey. This program displays the period corresponding to the time of day it is." />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="shortcut icon" href="icon.png" />
+<!-- Popup to homescreen link on iOS, very configurable -->
+<link rel="stylesheet" href="add2home.css">
+<script type="application/javascript" src="add2home.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon"  href="icon.png" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body onload="init()" >
+<img id="bg" alt="" title=""/> <!--Background hack-->
+<!-------------------------->
+<div id="chsweb">
+<iframe id="iframe"  style="overflow: hidden;"></iframe>
+</div>
+<!-------------------------->
+<div id="calendar">
+<iframe id="iframe" src="http://www.google.com/calendar/embed?showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=550&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=chswebmasterteam%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " frameborder="0" scrolling="no" width=100%></iframe>
+</div>
+<!-------------------------->
+<div id="instructions">
+<iframe id="iframe" src="instructions.html" style="overflow: hidden;" width=100%></iframe>
+</div>
+<!-------------------------->
+<a onclick="closeDiv('chsweb');closeDiv('calendar');closeDiv('instructions');">
+<div id="header">Cranford High School - Period Notifier
+
+<div id="iframeBar">
+<img id="float" width=25px height=20px src="images/home.gif"/>
+Currently: <span id="period2"></span> &#8226; <span id="spanning2"></span>
+</div></div></a>	
+<!-------------------------->
+<div id="transparent">
+<p style="margin:20px; line-height:120%">
+
+	Date: <br/><span id="date"></span><br/><br/>
+	Time: <br/><span id="time"></span> <span id="ampm"></span><br/><br/>
+	<span id="period"></span><br/><span id="spanning"></span><br/><br/>
+	Notes:<br/><span id="note"></span>
+</p>
+</div>
+<!-------------------------->
+<div id="popUp">
+<a onclick="loadFrame('http://www.cranfordschools.org/chs/index.html');openDiv('chsweb');"><img src="images/school.gif"  id = "menu" /></a>
+<a onclick="openDiv('calendar');"><img src="images/calendar.gif" id = "menu" /></a>
+<a onclick="sched();"><img src="images/sched.gif"  id = "menu" /></a>
+<a onclick="credits();"><img src="images/credits.gif"  id = "menu" /></a>
+<a onclick="openDiv('instructions');"><img src="images/question.gif"  id = "menu" /></a>
+</div>
+
+</body>
+</html>
